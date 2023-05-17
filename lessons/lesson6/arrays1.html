@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // let arr = [11, 22];
+    // let push = arr.push(33);
+    // console.log(arr, push);
+    // let unshift = arr.unshift(0);
+    // console.log(arr, unshift);
+    // let pop = arr.pop();
+    // console.log(pop);
+    // console.log(arr);
+    // let shift = arr.shift();
+    // console.log(arr, shift);
+
+    let arr = [111, 222, 333, 444];
+    let asd = arr.splice(1, 2, 'asd', 'qwe', 'zxc');
+    console.log(arr, asd);
+    let reverse = arr.reverse();
+    //[111, 'asd', 'qwe', 'zxc', 444]
+    console.log(arr.indexOf('asd'));
+    //[444, 'zxc', 'qwe', 'asd', 111]
+    let slice = arr.slice(1, 3);
+    console.log(slice);
+    console.log(arr);
+    console.log(arr.includes(444));
+
+
+
+
+</script>
+</body>
+</html>

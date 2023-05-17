@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //    let users = [
+    //        {name: 'vasya', age: 31, status: false},
+    //        {name: 'petya', age: 30, status: true},
+    //        {name: 'kolya', age: 29, status: true},
+    //        {name: 'olya', age: 28, status: false},
+    //        {name: 'max', age: 30, status: true},
+    //        {name: 'anya', age: 31, status: false},
+    //        {name: 'oleg', age: 28, status: false},
+    //        {name: 'andrey', age: 29, status: true},
+    //        {name: 'masha', age: 30, status: true},
+    //        {name: 'olya', age: 31, status: false},
+    //        {name: 'max', age: 31, status: true}
+    //    ];
+
+
+    // users.forEach(value => console.log(value));
+    // users.forEach(user => user.age > 30 ? user.isLoveOlive = true : null);
+    // console.log(users);
+
+    // let filter = users.filter(value => {
+    //     return value.age > 30
+    // });
+    // console.log(filter);
+
+    // let map = users.map(value => {
+    //     let newUser = value;
+    //     if (value.age > 30) {
+    //         newUser.isLoveOlive = true
+    //     }
+    //
+    //     return newUser
+    //
+    // });
+
+    // [31, 30, 29, 28, 30, 31, 28, 29, 30, 31, 31]
+    // let map = users.map(user => user.age);
+
+    // let map = users.map((user, index, array) => {
+    //     let u = {...user}
+    //     u.id = index;
+    //     return u;
+    // });
+    //
+    // console.log(users);
+    // console.log(map);
+    // console.log(map === users);
+    // console.log(map[0] === users[0]);
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    // let sort = users.sort((a, b) => {
+    //     return 31 - 30;
+    // });
+    //
+    // console.log(sort);
+
+
+    // console.log(users.sort((a, b) => {
+    //     if (a.name > b.name) {
+    //         return 1
+    //     }
+    //     if (a.name < b.name) {
+    //         return -1
+    //     }
+    //     return 0;
+    // }));
+
+
+    // console.log(users.sort((a, b) => a.name.localeCompare(b.name)));
+
+
+    // reduce
+    // [11.....]->{[],[]}
+
+    console.log(users.reduce((accumulator, user) => {
+        if (user.status) {
+            accumulator.tStatus.push(user)
+        } else {
+            accumulator.fStatus.push(user)
+
+        }
+        return accumulator;
+    }, {tStatus: [], fStatus: []}));
+
+</script>
+</body>
+</html>
