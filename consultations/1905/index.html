@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // можете еще  объяснить в кратце для чего нужно 'map'
+    // [{}{}]->[0,1]
+    // [{}{}]->['0','1']
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    // ]; //-> [{name:'vasya'},{name : 'petya'}]
+    //
+    let usersWithAddress = [
+        {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+        {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+        {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 90}},
+        {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 22}},
+        {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}},
+        {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 17}},
+        {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}},
+        {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+        {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 1}},
+        {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+        {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 122}}
+    ]; // -> [{id:1,name:''},{id:1,name:''},{id:1,name:''},{id:1,name:''},{id:1,name:''},]
+    //
+    // let map = usersWithAddress.map(value => ({id: value.id, name: value.name}));
+    // console.log(map);
+
+
+    // let map = usersWithAddress
+    //     .sort((user1, user2) => user1.address.number - user2.address.number)
+    //     .filter(value => value.age > 30)
+    //     .map(value => ({imya: value.name}));
+    // console.log(map);
+    //
+    // let books = []  //{title :'',genres:[],pages:123}
+    //
+    // // let sortBookks = books.sort((a, b) => a.genres.length - b.genres.length);
+    // // let maxGenreSize = sortBookks[0].genres.length;
+    // // sortBookks.filter(value => value.genres.length === maxGenreSize);
+    //
+    // books.sort((a, b) => a.genres.length - b.genres.length)
+    //     .reduce((acccum, book) => {
+    //         if (book.genres.length === 8) {
+    //             ++acccum.count8
+    //         } else if (book.genres.length === 7) {
+    //             ++acccum.count7
+    //         }
+    //         return acccum;
+    //
+    //     }, {count8: 0, count7: 0, count6: 0})//-> result of reduce {counnt8:30,count7:40,count6:30}
+
+
+    let sort = usersWithAddress.sort((a, b) => b.id - a.id);
+    // console.log(sort);
+    // console.log(usersWithAddress);
+    // console.log(sort === usersWithAddress); // true
+
+    let map = usersWithAddress.map(value => ({id: value.id}));
+    console.log(usersWithAddress === map); // false
+    console.log(map);
+
+
+    // "Чи можна ще раз пройтись по методам масивів і як їх поєднувати у використанні.
+    // Наприклад є відфільтрований масив . І треба вивести тільки ті які перші по певним параметрам . Їх може бути 2 і більше"
+
+
+    // Если можно, показать где или в какой момент указывать название репозитория для сохранения проектов. т.е в любой момент изменить её. Чат так не подскажет)
+
+
+    // reduce
+
+</script>
+</body>
+</html>
