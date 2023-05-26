@@ -20,15 +20,76 @@
     // new Car('model', 19999, {title: 'az55', manufactirer: 'aisin', piston: [{}, {}, {}, {},]})
 
 
-    function Car(model, power, eTitle, eManufacturer, pistons) {
-        this.model = model;
-        this.power = power;
-        this.engine = {title: eTitle, manufactirer: eManufacturer, pistons: pistons};
+    // function Car(model, power, eTitle, eManufacturer, pistons) {
+    //     this.model = model;
+    //     this.power = power;
+    //     this.engine = {title: eTitle, manufactirer: eManufacturer, pistons: pistons};
+    // }
+    //
+    // new Car('model', 19999, 'az55', 'aisin', [{}, {}, {}, {},]);
+    //
+    // function User(id,
+    //               name,
+    //               username,
+    //               email,
+    //               street,
+    //               suite,
+    //               city,
+    //               zipcode,
+    //               lat,
+    //               lng,
+    //               phone,
+    //               website,
+    //               companyName,
+    //               catchPhrase,
+    //               bs) {
+    //
+    //
+    //     this.id = id;
+    //     this.name = name;
+    //     this.surname = username;
+    //     this.email = email;
+    //     this.address = {
+    //         street,
+    //         suite,
+    //         city,
+    //         zipcode,
+    //         geo: {
+    //             lat, lng
+    //         }
+    //     };
+    //     this.phone = phone;
+    //     this.website = website;
+    //     this.company = {
+    //         name: companyName, catchPhrase, bs
+    //     };
+    //
+    // }
+
+
+    function Person(name, age, status) {
+        this.name = name;
+        this.age = age;
+        this.status = status;
+
     }
 
-    new Car('model', 19999, 'az55', 'aisin', [{}, {}, {}, {},]);
+    function Spec(group, specialization) {
+        this.group = group;
+        this.specialization = specialization;
+    }
 
 
+    function Student(name, age, status, group, specialization) {
+        Person.apply(this, arguments);
+        Spec.apply(this, [group, specialization]);
+    }
+
+    let student = new Student("asd", 123, true, 'mem05', 'java');
+    console.log(student);
+
+
+    class X extends Y{}
 </script>
 </body>
 </html>
