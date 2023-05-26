@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // function Car(model, power, engine) {
+    //     this.model = model;
+    //     this.power = power;
+    //     this.engine = engine;
+    // }
+    //
+    // new Car('model', 19999, {title: 'az55', manufactirer: 'aisin', piston: [{}, {}, {}, {},]})
+
+
+    function Car(model, power, eTitle, eManufacturer, pistons) {
+        this.model = model;
+        this.power = power;
+        this.engine = {title: eTitle, manufactirer: eManufacturer, pistons: pistons};
+    }
+
+    new Car('model', 19999, 'az55', 'aisin', [{}, {}, {}, {},]);
+
+
+</script>
+</body>
+</html>
