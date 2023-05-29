@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo2</title>
+</head>
+<body>
+
+<!--<div class="wrap"></div>-->
+
+<ol id="list"></ol>
+<script>
+
+    // let h3 = document.createElement('h3');
+    // h3.innerText = 'this is title h3';
+    // h3.classList.add('title-3');
+    //
+    // let wrap = document.getElementsByClassName('wrap')[0];
+    // console.log(wrap);
+    // wrap.appendChild(h3);
+
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    //
+    // let ol = document.getElementById('list');
+    //
+    // for (const user of users) {
+    //     let li = document.createElement('li');
+    //     li.innerText = `${user.age} ${user.name}  ${user.status}`;
+    //     ol.appendChild(li);
+    // }
+
+
+    let products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        },
+    ];
+
+    for (const product of products) {
+        let productContainer = document.createElement('div');
+        document.body.appendChild(productContainer);
+
+        let h3 = document.createElement('h3');
+        h3.innerText = `${product.title} ${product.price} UAH`
+        let img = document.createElement('img');
+        // img.setAttribute('src', product.image);
+        img.src = product.image;
+
+        productContainer.append(h3, img);
+
+
+    }
+
+
+</script>
+</body>
+</html>
