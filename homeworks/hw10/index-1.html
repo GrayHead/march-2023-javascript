@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<form name="creator">
+    <label>Name:<input type="text" name="name"></label>
+    <br/>
+    <label>Surname:<input type="text" name="surname"></label>
+    <br/>
+    <label>Age:<input type="number" name="age"></label>
+    <br/>
+    <button>Create</button>
+</form>
+
+<script>
+    // Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+    const form = document.forms.creator;
+    form.onsubmit = function (e) {
+        e.preventDefault();
+
+        const wrapper = document.createElement('div');
+        const name = document.createElement('div');
+        const surname = document.createElement('div');
+        const age = document.createElement('div');
+
+        name.innerText = `Name: ${this.name.value}`
+        surname.innerText = `Surname: ${this.surname.value}`
+        age.innerText = `Age: ${this.age.value}`
+
+        this.name.value = '';
+        this.surname.value = '';
+        this.age.value = '';
+
+        wrapper.append(name, surname, age);
+        document.body.appendChild(wrapper);
+    }
+</script>
+</body>
+</html>

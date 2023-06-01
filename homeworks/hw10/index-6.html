@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+
+</head>
+<body>
+<form name="checker">
+    <label>Age:<input type="number" name="age"></label>
+    <button>Check</button>
+</form>
+
+<script>
+    //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+    const form = document.forms.checker;
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        if (this.age.value < 18) {
+            return alert('Go away');
+        }
+        return alert('Welcome');
+    }
+</script>
+</body>
+</html>
