@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<h1>Count: <i id="number"></i></h1>
+
+<script>
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+    const count = localStorage.getItem('count') || 0;
+    const block = document.getElementById('number');
+    const newCount = (+count + 1).toString();
+    block.innerText = newCount;
+    localStorage.setItem('count', newCount);
+</script>
+</body>
+</html>
