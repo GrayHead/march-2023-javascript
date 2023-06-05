@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // let commentsRequest = fetch('https://jsonplaceholder.typicode.com/comments')
+    //     .then(response => response.json());
+    //
+    // let usersRequest = fetch('https://jsonplaceholder.typicode.com/users')
+    //     .then(response => response.json());
+    //
+    // Promise.all([commentsRequest, usersRequest]).then(value => console.log(value))
+
+   async function requestUsers() {
+        let response = await fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json());
+       console.log(response);
+       return response;
+
+
+    }
+
+    let xxx = requestUsers();
+
+
+
+</script>
+</body>
+</html>
