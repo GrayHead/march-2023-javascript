@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    //     function* foo() {
+    //         yield {id: 1};
+    //         // .....
+    //         yield {id: 2};
+    //         //.....
+    //         yield  {id: 3};
+    // ////.....
+    //         return 'end';
+    //     }
+    //
+    //     let generator1 = foo();
+    //
+    //     console.log(generator1.next());
+    //     console.log(generator1.next());
+    //     console.log(generator1.next());
+    //     console.log(generator1.next());
+    //     console.log(generator1.next());
+
+
+    // let namesForNamingYourFiles = ['filename1.jpg', 'filename2.jpg', 'filename3.jpg',
+    // ]
+    //
+    // function* nameGenerator() {
+    //     for (const name of namesForNamingYourFiles) {
+    //         yield name;
+    //     }
+    //
+    // }
+    //
+    // let generator = nameGenerator();
+    //
+    // //.........
+    //
+    // console.log("file name is - " + generator.next().value);
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    //
+    // console.log("file name is - " + generator.next().value);
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    // ///......
+    //
+    // console.log("file name is - " + generator.next().value);
+
+
+    async function* fetcYieldUsers() {
+        let users = await fetch('https://jsonplaceholder.typicode.com/users')
+            .then(value => value.json());
+        console.log(users);
+        for (const user of users) {
+            yield user.name;
+        }
+    }
+
+    let asyncGenerator = fetcYieldUsers();
+    // asyncGenerator.next().then(value => console.log(value));
+    // asyncGenerator.next().then(value => console.log(value));
+    // asyncGenerator.next().then(value => console.log(value));
+
+    while (true) {
+
+        asyncGenerator.next().then(value => {
+            console.log(value);
+            if (value.done) {
+                return;
+            }
+            asyncGenerator.next().then(value => console.log(value));
+        });
+
+    }
+
+
+</script>
+</body>
+</html>

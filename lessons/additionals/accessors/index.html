@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // let core = {id: 999}
+    // console.log(core);
+    //
+    // let clone = Object.create(core);
+    // console.log(clone);
+    // console.log(clone.__proto__);
+    //
+    // console.log(clone.hasOwnProperty('id'));
+
+    let obj = {};
+    obj.xxx = 'gsadjgadsj';
+
+
+    // Object.defineProperty(
+    //     obj,
+    //     'id',// 9090
+    //     {
+    //         // value: 222,
+    //         // writable: true,
+    //         configurable: true,
+    //         enumerable: true,
+    //         get: function () {
+    //             console.log('stuff');
+    //             return "asjdgajdsgajgd";
+    //         },
+    //         set: function (value) {
+    //             //stuff 2
+    //             this.name = 'vasysa ' + value;
+    //         }
+    //
+    //     }
+    // );
+    // console.log(obj);
+    // obj.id = 333;
+    // console.log(obj);
+    // console.log(obj.id);
+    //
+    // obj.id = 9090;
+    // console.log(obj);
+
+    Object.defineProperty(obj, 'fullname', {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+            return this.xxx;
+
+        },
+        set: function (arg) {
+            //name- vasyas surname pupkin
+            let [name, surname] = arg.split(' '); //[vasya,pupkin]
+            this.firstname = name;
+            this.surname = surname;
+
+        },
+    });
+
+    obj.fullname = 'kokos abrikosov';
+
+    console.log(obj.fullname);
+
+
+</script>
+</body>
+</html>

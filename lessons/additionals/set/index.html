@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // collections
+    let set = new Set(); // [unique]
+
+    let obj = {};
+    set.add('foo');
+    set.add('bar');
+    set.add('foo');//?
+    set.add('foobar');
+    set.add(obj); // {}
+    set.add(obj); // {}
+    console.log(set);
+    set.forEach(value => console.log(value));
+    console.log(set[0]);
+
+    let from = Array.from(set);
+    console.log(from);
+
+
+
+
+
+</script>
+</body>
+</html>
